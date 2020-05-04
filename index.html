@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table</title>
+        <script src="main.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <h1>
+            Таблица студентов   
+        </h1>
+        <div class="view">
+            <table class="students" id="tableForAdding">
+                <thead>
+                    <th class="Width200px">ФИО</th>
+                    <th class="Width80px">Курс</th>
+                    <th class="Width80px">Группа</th>
+                    <th class="Width120px">Номер студ. билета</th>
+                    <th class="RemoveButton">Удаление</th>
+                </thead>
+            </table>
+        </div>
+        <div class="input">
+            <form>
+                <p>ФИО</p>
+                <input type="text" name="FIO">
+                <p>Курс</p>
+                <input type="number" name="Course">
+                <p>Группа</p>
+                <input type="number" name="Group">
+                <p>Номер студ. билета</p>
+                <input type="number" name="Ticket">
+                <input type="button" value="Добавить" id ="addButon">
+            </form>
+        </div>
+    </body>   
+</html>
