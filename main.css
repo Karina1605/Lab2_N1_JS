@@ -20,8 +20,15 @@ table{
     border: 2px solid #000;
     width: 610px;
 }
-.th, th{
-    border: 1px solid #000;
+th{
+    text-align: left;
+}
+th:hover{
+    background-color: #3CB371;
+}
+th.RemoveButton:hover
+{
+    background-color: #ffffff;
 }
 .Width200px{
     width: 200px;
@@ -31,6 +38,11 @@ table{
 }
 .Width120px{
     width: 120px;
+}
+.RemoveButton
+{
+    width: 80px;
+    border: none;
 }
 .input{
     border: 1px solid #000;
