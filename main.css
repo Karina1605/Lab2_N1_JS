@@ -3,6 +3,9 @@ body{
     margin-left: 50px;
     font-family: Arial, Helvetica, sans-serif;
 }
+h1{
+    margin-left: 15px;
+}
 .view{
     margin: 20px;
     width: 510px;
@@ -17,11 +20,26 @@ p{
     border-color: #000;
 }
 table{
-    border: 2px solid #000;
+    border: 1px solid #000;
+    border-radius: 10px;
     width: 610px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+th, td{
+    text-align: left;
+    padding-left: 10px;
 }
 th{
-    text-align: left;
+    
+    border-right: .5px solid #000;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+#StudTicketColumn{
+    border-right: none;
 }
 th:hover{
     background-color: #3CB371;
@@ -46,6 +64,7 @@ th.RemoveButton:hover
 }
 .input{
     border: 1px solid #000;
+    border-radius: 10px;
     width: 300px;
     float:right;
     margin-top: 20px;
