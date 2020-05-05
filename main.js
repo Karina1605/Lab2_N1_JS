@@ -37,6 +37,7 @@ class Student{
         remove.src = "remove.png";
         remove.style.float="right";
         remove.style.height="20px";
+        remove.style.marginRight = "20px";
         remove.style.width ="20px";
         remove.addEventListener('click', ()=>{
             let r = remove.closest("tr");
@@ -60,6 +61,13 @@ class StudentsTable{
         student.generateHtmlRow();
         this._students.push(student);
     }
+    clear(){
+        let tableCleared =new Array();
+        for (let i=0; i<this._students.length; ++i)
+            if (this._students[i]._isActive)
+            tableCleared.push(this._students[i]);
+        this._students =tableCleared;
+    }
 }
 let table =new StudentsTable();
 let addNew =document.getElementById("addButton");
@@ -70,3 +78,18 @@ addNew.addEventListener('click', ()=>{
     table.addNew(student);
     form.reset()
 });
+function Sort(index)
+{
+    table.clear();
+    let rows= Array.from(htmlTable.rows).slice(1).sort((row1, row2)=>row1.cells[index].innerHTML>=row2.cells[index].innerHTML?1:-1);
+    htmlTable.tBodies[0].append(...rows);
+}
+let initials = document.getElementById("FioColumn");
+let courses = document.getElementById("CourseColumn");
+let groups =document.getElementById("GroupColumn");
+let tickets = document.getElementById("StudTicketColumn");
+tickets.addEventListener('mousedown', HighLight.bind(null, tickets));
+initials.addEventListener('click', Sort.bind(null, 0));
+courses.addEventListener('click', Sort.bind(null, 1));
+groups.addEventListener('click', Sort.bind(null, 2));
+tickets.addEventListener('click', Sort.bind(null, 3));
