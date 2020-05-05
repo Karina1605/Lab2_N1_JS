@@ -88,7 +88,6 @@ let initials = document.getElementById("FioColumn");
 let courses = document.getElementById("CourseColumn");
 let groups =document.getElementById("GroupColumn");
 let tickets = document.getElementById("StudTicketColumn");
-tickets.addEventListener('mousedown', HighLight.bind(null, tickets));
 initials.addEventListener('click', Sort.bind(null, 0));
 courses.addEventListener('click', Sort.bind(null, 1));
 groups.addEventListener('click', Sort.bind(null, 2));
